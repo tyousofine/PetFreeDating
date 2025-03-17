@@ -1,8 +1,17 @@
-import React from 'react'
+import redLogo from '../images/NopetsDatingRed.png';
+import noDog from '../images/noDog.png';
+import nopetText from '../images/nopetText.png';
 
-function Navbar() {
+function Navbar({ minimal = false, authToken }) {
+
     return (
-        <div>Navbar</div>
+        <nav>
+            <div className='logo-container'>
+                <img className="logo" src={minimal ? redLogo : nopetText} alt="" />
+            </div>
+            {!authToken && <button className='nav-button'>Log in</button>}
+        </nav>
+
     )
 }
 
