@@ -2,15 +2,25 @@ import redLogo from '../images/NopetsDatingRed.png';
 import noDog from '../images/noDog.png';
 import nopetText from '../images/nopetText.png';
 
-function Navbar({ minimal = false, authToken }) {
+function Navbar({ minimal = true, authToken, setShowModal, showModal }) {
+
+    const handleClick = () => {
+        setShowModal(true)
+        console.log("login Clicked")
+    }
 
     return (
         <nav>
             <div className='logo-container'>
-                <img className="logo" src={minimal ? redLogo : nopetText} alt="" />
+                {!minimal ? <img className="logo" src={redLogo} alt='' /> : <h2 style={{ color: "white" }}>NO PET</h2>}
+
             </div>
-            {!authToken && <button className='nav-button'>Log in</button>}
-        </nav>
+            {!authToken &&
+                <button
+                    onClick={handleClick}
+                    className='nav-button'
+                    disabled={showModal}>Log in</button>}
+        </nav >
 
     )
 }
