@@ -4,31 +4,41 @@ import { useState } from "react";
 
 function Home() {
     const [showModal, setShowModal] = useState(false)
+    const [isSignUp, setIsSignUp] = useState(true)
 
 
     const authToken = false;
     const handleClick = () => {
         setShowModal(true);
         console.log("clicked!")
+        setIsSignUp(true)
     }
     return (
-        <div className="overlay">
-            <Navbar authToken={authToken} setShowModal={setShowModal} showModal={showModal}></Navbar>
-            <div className='home'>
-                <h1>Swipe Right™</h1>
-                <button
-                    className='primary-button'
-                    onClick={handleClick}>
+        <>
+            <div className="overlay">
+                <Navbar
+                    // authToken={authToken}
+                    setShowModal={setShowModal}
+                    showModal={showModal}
+                    setIsSignUp={setIsSignUp}>
 
-                    {authToken ? 'Signout' : 'Create Account'}
-                </button>
+                </Navbar>
+                <div className='home'>
+                    <h1 className="primary-title">Swipe Right™</h1>
+                    <button
+                        className='primary-button'
+                        onClick={handleClick}>
 
-                {showModal && (
-                    <AuthModal setShowModal={setShowModal} />
-                )}
+                        {authToken ? 'Signout' : 'Create Account'}
+                    </button>
+
+                </div>
             </div>
-        </div>
+            {showModal && (
+                <AuthModal setShowModal={setShowModal} isSignUp={isSignUp} />
+            )}
 
+        </>
     )
 }
 
