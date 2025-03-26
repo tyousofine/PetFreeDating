@@ -2,7 +2,12 @@ import React from 'react'
 
 function Dashboard() {
     return (
-        <div>Dashboard</div>
+        <div className='dashboard'>
+            <ChatContainer />
+            <div className='swiper-container'>
+                <div className="card-container"></div>
+            </div>
+        </div>
     )
 }
 
