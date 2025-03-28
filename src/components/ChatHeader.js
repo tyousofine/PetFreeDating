@@ -2,7 +2,16 @@ import React from 'react'
 
 function ChatHeader() {
     return (
-        <div>ChatHeader</div>
+        <div className='chat-container-header'>ChatHeader
+            <div className="profile">
+                <div className="img-container">
+                    <img src="" alt="" />
+
+                </div>
+                <h3>UserName</h3>
+            </div>
+            <i className="log-out-icon">&#8592;</i>
+        </div>
     )
 }
 
