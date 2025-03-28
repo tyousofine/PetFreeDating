@@ -2,7 +2,7 @@ import React from 'react'
 
 function ChatHeader() {
     return (
-        <div className='chat-container-header'>ChatHeader
+        <div className='chat-container-header'>
             <div className="profile">
                 <div className="img-container">
                     <img src="" alt="" />
@@ -10,7 +10,7 @@ function ChatHeader() {
                 </div>
                 <h3>UserName</h3>
             </div>
-            <i className="log-out-icon">&#8592;</i>
+            <i className="log-out-icon">⬅</i>
         </div>
     )
 }
