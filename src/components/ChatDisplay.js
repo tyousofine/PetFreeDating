@@ -1,8 +1,14 @@
 import React from 'react'
+import Chat from './Chat'
+import ChatInput from './ChatInput'
 
 function ChatDisplay() {
     return (
-        <div>ChatDisplay</div>
+        <>
+            <Chat />
+            <ChatInput />
+        </>
+
     )
 }
 

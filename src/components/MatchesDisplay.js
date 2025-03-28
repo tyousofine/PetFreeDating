@@ -2,7 +2,9 @@ import React from 'react'
 
 function MatchesDisplay() {
     return (
-        <div className='matches-display'>MatchesDisplay</div>
+        <div className='matches-display'>
+
+        </div>
     )
 }
 
